@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pass.css">
+</head>
+<body>
+    <div class="safe-pass">
+    <h2 class="pass-title">Generate a safe password:</h2>
+    <div class="pass-generator">
+        <div class="text-holder">
+        <p class="final-pass-text" id="final-pass"></p>
+        </div>
+        <button class="button-gen" id="gen-butt">Generate</button>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="pass-lenght-holder">
+    <p class="pass-lenght-text" id="len-word">Password lenght:8</p>
+    <!-- <div class="slider-value">
+        <div class="thumb-value"></div>
+    </div> -->
+    <input type="range" min="0" max="30" value="8" class="l-word" id="lenght-word">
+    </div>
+    </div>
+    <script>
+        let genButton=document.getElementById('gen-butt');
+        let wordLenght=document.getElementById('lenght-word');
+        let textLenght=document.getElementById('len-word');
+        wordLenght.oninput=function(){textLenght.innerHTML="Password lenght:"+this.value;}
+        genButton.onclick=function(){
+            let safePass="";
+            let len=parseInt(textLenght.innerHTML.substring(16,textLenght.innerHTML.length));
+           // console.log(len+" "+typeof(len));
+           for(let i=0;i<len;i++){
+            let randS=Math.floor((Math.random()*1000)+1)%93+1;
+            randS+=33;
+            while(String.fromCharCode(randS)=='<'){
+            randS=Math.floor((Math.random()*1000)+1)%93+1;
+            randS+=33;
+            }
+            console.log(String.fromCharCode(randS));
+            safePass+=String.fromCharCode(randS);
+            console.log("pass:"+safePass);
+           }
+            let genPassText=document.getElementById('final-pass');
+            genPassText.innerHTML=safePass;
+            // genPassText.style.height="50";
+            console.log("________________");
+           // console.log(safePass+" "+typeof(safePass));
+        }
+        
+    </script>
+</body>
+</html>
