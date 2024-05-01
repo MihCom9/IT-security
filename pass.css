@@ -29,6 +29,21 @@
     display: flex;
     align-items: center;
 }
+.stable-pass
+{
+    margin-left: auto;
+    margin-right: 15px;
+    width: fit-content;
+    display: none;
+    height: fit-content;
+    /* height: 80%; */
+    border: 1px solid orange;
+    background-color: orange;
+    padding: 10px 5px;
+    border-radius: 100px;
+    /* color: rgb(238, 42, 238); */
+    cursor: default;
+}
 .button-gen{
     box-sizing: border-box;
     float: left;
