@@ -10,7 +10,7 @@
     <div class="safe-pass">
     <h2 class="pass-title">Generate a safe password:</h2>
     <div class="pass-generator">
-        <div class="text-holder">
+        <div class="text-holder" id="holder-text">
         <p class="final-pass-text" id="final-pass"></p>
         <p class="stable-pass" id="stable-p"></p>
         </div>
@@ -132,6 +132,60 @@
         }else{
             stable.style.display="none"; 
         }
+        let letterWidth=320/30;
+           let stablePass=document.getElementById('stable-p');
+           console.log(stablePass.offsetWidth);
+           let textInStable=stablePass.innerHTML;
+           switch(textInStable){
+                case "Very Week":
+                    //82 
+                    if(stablePass.offsetWidth<82){
+                        console.log("Bozo very week")
+                    }   
+                break;
+                case "Week":
+                    //49        
+                break;
+                case "Moderate":
+                    //72       
+                break;
+                case "Strong":
+                    //55       
+                break;
+                case "Very Strong":
+                    //89   
+                    if(stablePass.offsetWidth<89){
+                        console.log("Bozo very strong");
+                        let holderGen=document.getElementById('holder-text');
+                        let holderWidth=holderGen.offsetWidth-20;
+                        let freeSpace=holderWidth-89;
+                        let lettersIn=Math.floor(freeSpace/letterWidth);
+                        console.log(lettersIn);
+                        let textFinal=document.getElementById("final-pass");
+                        let safeP=textFinal.innerHTML;
+                        let safep2="";
+                        let i=0;
+                        for(i=0;i<lettersIn-3;i++){
+                            let a= safeP.charCodeAt(i);
+                            console.log(a+" - "+String.fromCharCode(a));
+                            if(safeP[i]=="&"&&safeP[i+1]=="g"&&safeP[i+2]=="t"&&safeP[i+3]==";"){
+                                safep2+=">";
+                            }else{
+                            safep2+=(String.fromCharCode(a));
+                            console.log(safep2);
+                            if(safeP[i]=="&"){
+                                lettersIn+=4;
+                                i+=4;
+                            }
+                            }
+                        }
+                        console.log(safep2);
+                        console.log(safeP[i]);
+                        safep2+="...";
+                        textFinal.innerHTML=safep2;
+                    }     
+                break;
+           }
         }
     </script>
 </body>
