@@ -37,7 +37,7 @@
            for(let i=0;i<len;i++){
             let randS=Math.floor((Math.random()*1000)+1)%93+1;
             randS+=33;
-            while(String.fromCharCode(randS)=='<'){
+            while(String.fromCharCode(randS)=='<'||String.fromCharCode(randS)=='&'||String.fromCharCode(randS)=='>'){
             randS=Math.floor((Math.random()*1000)+1)%93+1;
             randS+=33;
             }
@@ -136,56 +136,64 @@
            let stablePass=document.getElementById('stable-p');
            console.log(stablePass.offsetWidth);
            let textInStable=stablePass.innerHTML;
+           let numberSmaller=0;
            switch(textInStable){
                 case "Very Week":
                     //82 
                     if(stablePass.offsetWidth<82){
                         console.log("Bozo very week")
-                    }   
+                    } 
+                    numberSmaller=81.95;  
                 break;
                 case "Week":
-                    //49        
+                    //49   
+                    numberSmaller=48.03;
                 break;
                 case "Moderate":
                     //72       
+                    numberSmaller=73.31;
                 break;
                 case "Strong":
                     //55       
+                    numberSmaller=54.67;  
                 break;
                 case "Very Strong":
-                    //89   
-                    if(stablePass.offsetWidth<89){
-                        console.log("Bozo very strong");
-                        let holderGen=document.getElementById('holder-text');
-                        let holderWidth=holderGen.offsetWidth-20;
-                        let freeSpace=holderWidth-89;
-                        let lettersIn=Math.floor(freeSpace/letterWidth);
-                        console.log(lettersIn);
-                        let textFinal=document.getElementById("final-pass");
-                        let safeP=textFinal.innerHTML;
-                        let safep2="";
-                        let i=0;
-                        for(i=0;i<lettersIn-3;i++){
-                            let a= safeP.charCodeAt(i);
-                            console.log(a+" - "+String.fromCharCode(a));
-                            if(safeP[i]=="&"&&safeP[i+1]=="g"&&safeP[i+2]=="t"&&safeP[i+3]==";"){
-                                safep2+=">";
-                            }else{
-                            safep2+=(String.fromCharCode(a));
-                            console.log(safep2);
-                            if(safeP[i]=="&"){
-                                lettersIn+=4;
-                                i+=4;
-                            }
-                            }
-                        }
-                        console.log(safep2);
-                        console.log(safeP[i]);
-                        safep2+="...";
-                        textFinal.innerHTML=safep2;
-                    }     
+                    //89  
+                    numberSmaller=88.89;      
                 break;
            }
+               let textFinal=document.getElementById("final-pass");
+               let saveText= textFinal.innerHTML;
+               let saveSafeP="";
+                while(stablePass.getBoundingClientRect().width<numberSmaller){
+                    //console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
+                    let safeP=textFinal.innerHTML;
+                    safeP=safeP.substring(0,safeP.length-1);
+                    textFinal.innerHTML=safeP;
+                    console.log(safeP);
+                    saveSafeP=safeP;
+                }
+                console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
+                if(saveSafeP.length<saveText.length&&saveSafeP.length>0){
+                    saveSafeP=saveSafeP.substring(0,saveSafeP.length-3);
+                    saveSafeP+="...";
+                    textFinal.innerHTML=saveSafeP;
+                }
+                let holderGen=document.getElementById('holder-text');
+                let holderWidth=holderGen.offsetWidth-20;
+                while((holderWidth<textFinal.offsetWidth+stablePass.offsetWidth)||(holderWidth-textFinal.offsetWidth<stablePass.offsetWidth)||(textFinal.offsetHeight>23)){
+                    console.log(holderWidth+" "+(textFinal.offsetWidth+stablePass.offsetWidth));
+                    let safeP=textFinal.innerHTML;
+                    safeP=safeP.substring(0,safeP.length-1);
+                    textFinal.innerHTML=safeP;
+                    console.log(safeP);
+                    saveSafeP=safeP;
+                }
+                if(saveSafeP.length<saveText.length&&saveSafeP.length>0){
+                    saveSafeP=saveSafeP.substring(0,saveSafeP.length-3);
+                    saveSafeP+="...";
+                    textFinal.innerHTML=saveSafeP;
+                }
         }
     </script>
 </body>
