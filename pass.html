@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="safe-pass">
-    <h2 class="pass-title">Generate a safe password:</h2>
+    <h2 class="pass-title">Generate a password:</h2>
     <div class="pass-generator">
         <div class="text-holder" id="holder-text">
         <p class="final-pass-text" id="final-pass"></p>
@@ -23,8 +23,10 @@
         <div class="thumb-value"></div>
     </div> -->
     <input type="range" min="0" max="30" value="8" class="l-word" id="lenght-word">
+    <button class="copy-text-btn" onclick="copyText()">Copy</button>
     </div>
     </div>
+    <p id="saver" class="save-text">asdasd</p>
     <script>
         let genButton=document.getElementById('gen-butt');
         let wordLenght=document.getElementById('lenght-word');
@@ -87,7 +89,7 @@
         let strengthTextValue = '';
         switch (strength) {
         case 1:
-            strengthTextValue = 'Very Weak';
+            strengthTextValue = 'Weak';
             break;
         case 2:
             strengthTextValue = 'Weak';
@@ -109,8 +111,8 @@
             stable.style.display="block";
             switch (strength) {
         case 1:
-            stable.style.background="red";
-            stable.style.borderColor="red";
+            stable.style.background="orange";
+            stable.style.borderColor="orange";
             break;
         case 2:
             stable.style.background="orange";
@@ -125,8 +127,10 @@
             stable.style.borderColor="lightgreen";
             break;
         case 5:
-            stable.style.background="green";
-            stable.style.borderColor="green";
+            // stable.style.background="green";
+            // stable.style.borderColor="green";
+            stable.style.background="lightgreen";
+            stable.style.borderColor="lightgreen";
             break;
         }
         }else{
@@ -169,6 +173,12 @@
                     saveSafeP+="...";
                     textFinal.innerHTML=saveSafeP;
                 }
+                let saverT=document.getElementById('saver');
+                saverT.innerHTML=saveText;
+        }
+        function copyText(){
+            let saverT=document.getElementById('saver');
+            navigator.clipboard.writeText(saverT.innerHTML);
         }
     </script>
 </body>

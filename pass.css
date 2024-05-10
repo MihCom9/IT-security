@@ -50,6 +50,19 @@
     width: 17%;
     height: 50px;
     text-transform: uppercase;
+    border: 1px solid gray;
+    margin: 0px;
+}
+.copy-text-btn{
+    height: 100%;
+    padding: 15px 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    border: 1px solid gray;
+}
+.button-gen:hover,.copy-text-btn:hover{
+    background-color: rgb(135, 197, 238);
+    border-color: rgb(74, 175, 243);
 }
 .pass-lenght-holder{
     width: 100%;
@@ -72,6 +85,10 @@
 .l-word{
     width: 100%;
 }
+.save-text{
+    display: none;
+}
+
 @media(max-width:992px){
     .text-holder{
         box-sizing: border-box;
