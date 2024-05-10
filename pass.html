@@ -132,40 +132,15 @@
         }else{
             stable.style.display="none"; 
         }
-        let letterWidth=320/30;
+            let letterWidth=320/30;
            let stablePass=document.getElementById('stable-p');
            console.log(stablePass.offsetWidth);
            let textInStable=stablePass.innerHTML;
-           let numberSmaller=0;
-           switch(textInStable){
-                case "Very Week":
-                    //82 
-                    if(stablePass.offsetWidth<82){
-                        console.log("Bozo very week")
-                    } 
-                    numberSmaller=81.95;  
-                break;
-                case "Week":
-                    //49   
-                    numberSmaller=48.03;
-                break;
-                case "Moderate":
-                    //72       
-                    numberSmaller=73.31;
-                break;
-                case "Strong":
-                    //55       
-                    numberSmaller=54.67;  
-                break;
-                case "Very Strong":
-                    //89  
-                    numberSmaller=88.89;      
-                break;
-           }
+           let numberSmaller=40.00;
                let textFinal=document.getElementById("final-pass");
                let saveText= textFinal.innerHTML;
                let saveSafeP="";
-                while(stablePass.getBoundingClientRect().width<numberSmaller){
+                while(stablePass.getBoundingClientRect().height>numberSmaller){
                     //console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
                     let safeP=textFinal.innerHTML;
                     safeP=safeP.substring(0,safeP.length-1);
