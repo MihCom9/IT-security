@@ -1,0 +1,16 @@
+main{
+    font-family: "Noto Sans", sans-serif;
+    margin-top: 80px;
+}
+.title{
+    width: fit-content;
+    margin: auto;
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+.safeTips{
+    width:  74%;
+    margin: auto;
+    border: 1px solid black;
+}
