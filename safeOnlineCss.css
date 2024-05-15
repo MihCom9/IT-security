@@ -10,7 +10,32 @@ main{
     margin-bottom: 40px;
 }
 .safeTips{
-    width:  74%;
+    width: 992px;
     margin: auto;
     border: 1px solid black;
+    padding: 0px 20px;
+}
+.listTips{
+    list-style-type: none;
+    padding-left: 0px;
+}
+.listTips li{
+    margin-bottom: 20px;
+}
+li h3{
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+li p{
+    font-size: 18px;
+}
+.strong-password-requirements,.authentMethods{
+    list-style-type: disc;
+}
+.strong-password-requirements li,.authentMethods li{
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+.authImg{
+    width: 60%;
 }
