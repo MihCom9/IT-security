@@ -8,9 +8,11 @@ main{
     font-size: 56px;
     font-weight: 600;
     margin-bottom: 40px;
+    text-align: center;
 }
 .safeTips{
-    width: 992px;
+    box-sizing: border-box;
+    width: 1040px;
     margin: auto;
     border: 1px solid black;
     padding: 0px 20px;
@@ -29,13 +31,40 @@ li h3{
 li p{
     font-size: 18px;
 }
-.strong-password-requirements,.authentMethods{
+.strong-password-requirements,.authentMethods,.phishingAttack{
     list-style-type: disc;
 }
-.strong-password-requirements li,.authentMethods li{
+.strong-password-requirements li,.authentMethods li,.phishingAttack li{
     margin-bottom: 5px;
     font-size: 18px;
 }
 .authImg{
     width: 60%;
+    margin-top: 15px;
+}
+@media(max-width:1040px){
+    .safeTips{
+        width: 100%;
+    }
+}
+@media(max-width:992px){
+    .title{
+        font-size: 48px;
+    }
+    li h3{
+        font-size: 24px;
+    }
+    li p{
+        font-size: 17px;
+    }
+}
+@media(max-width:768px){
+    .title{
+        font-size: 44px;
+    }
+}
+@media(max-width:600px){
+    .authImg{
+        width: 100%;
+    }
 }
