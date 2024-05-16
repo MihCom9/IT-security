@@ -81,3 +81,8 @@ div {
 li {
     font-size: 18px;
 }
+
+.word1 {
+    font-weight: 900;
+    text-decoration: underline;
+}

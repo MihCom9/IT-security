@@ -15,3 +15,18 @@ function move() {
     btn.style.top = `${top}px`;
     btn.style.left = `${left}px`;
 }
+
+
+
+function my1Function() {
+    var x = document.getElementById("myDIV");
+    var b = document.getElementById("hbutton");
+
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        b.innerHTML = "hide ∨ ";
+    } else {
+        x.style.display = "none";
+        b.innerHTML = "more > ";
+    }
+}                                                                                                                                                                        
