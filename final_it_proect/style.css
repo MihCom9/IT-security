@@ -132,6 +132,7 @@ nav li {
     width: 74%;
     height: fit-content;
     margin: auto;
+    margin-top: 60px;
 }
 .pass-generator{
     position: relative;
