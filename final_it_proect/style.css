@@ -129,10 +129,11 @@ nav li {
 /* str_pass*/
 
 .safe-pass{
-    width: 74%;
+    width: 75%;
     height: fit-content;
     margin: auto;
     margin-top: 60px;
+    margin-bottom: 50px;
 }
 .pass-generator{
     position: relative;
@@ -244,18 +245,20 @@ nav li {
 }
 /* str_pass input*/
 .container2 {
+    box-sizing: border-box;
+    width: 75%;
     text-align: center;
     background-color: #fff;
     padding: 1vw;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: grid;
-
+    margin: auto;
     gap: 2rem;
-    position: absolute;
+    /* position: absolute;
     right: 18%;
     left: 18%;
-    top: 60%;
+    top: 60%; */
   }
 input[type="password"] {
     width: 300px;
@@ -281,6 +284,7 @@ input[type="password"] {
 
 /* index2*/
 .main2{
+    margin-top: 60px;
     font-size:2vw;
 }
 .container3 {
