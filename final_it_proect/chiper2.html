@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header>
+        <ul class="nav1">
+
+           
+            <li style="float:left"><a class="active" href="index.html">Home</a></li>
+            <li class="nav2"><a href="strong_pass.html">Strong password</a></li>
+            <li class="nav2"><a href="chiper2.html">Chiper text</a></li>
+            <li class="nav2"><a href="index2.html">Real events</a></li>
+            <li class="nav2"><a href="How-they_attack_us.html">How hackers hack us</a></li>
+            <li class="nav2"><a href="safe_online.html">Be safe online</a></li>
+
+        </ul>
+    </header>
+
+    <textarea style=" margin-top: 5%;" id="text" class="textarea2" name="text" rows="4" cols="50"></textarea>
+    <div>
+        <input class="input_chiper" type="number" id="offset" name="offset" min="1" max="31">
+        <button class="but2"  onclick="cipher(document.getElementById('text').value, true, +document.getElementById('offset').value)">Cipher</button>
+        <button class="but2" onclick="cipher(document.getElementById('text').value, false, +document.getElementById('offset').value)">Decipher</button>
+    </div>
+    <p class="p_in_chiper" id="result">Result here...</p>
+
+    <script>
+        function cipher(msg, isCiphering, offset) {
+            const alphabet = 'АаБбВвГгДдЕеЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЬьЮюЯяABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 .,!?@#-/';
+            let result = '';
+        
+            for (let i = 0; i < msg.length; i++) {
+                const originalChar = msg[i];
+                const originalPosition = alphabet.indexOf(originalChar);
+        
+                const newPosition =
+                    isCiphering
+                        ? (originalPosition + offset)
+                        : (originalPosition - offset + alphabet.length);
+        
+                const newChar = 
+                    originalPosition == -1
+                        ? originalChar
+                        : alphabet[newPosition % alphabet.length];
+        
+                result += newChar;
+            }
+        
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+
+</html>

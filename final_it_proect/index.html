@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity</title>
+    <link rel="stylesheet" href="./style.css" />
+   
+</head>
+
+<style>
+    p{
+        color: black;
+    }
+</style>
+
+<body>
+    <header>
+        <ul class="nav1">
+
+            <li style="float:left"><a class="active" href="index.html">Home</a></li>
+            <li class="nav2"><a href="strong_pass.html">Strong password</a></li>
+            <li class="nav2"><a href="chiper2.html">Chiper text</a></li>
+            <li class="nav2"><a href="index2.html">Real events</a></li>
+            <li class="nav2"><a href="How-they_attack_us.html">How hackers hack us</a></li>
+            <li class="nav2"><a href="safe_online.html">Be safe online</a></li>
+
+        </ul>
+    </header>
+    <main class="main2">
+        <section>
+            <h2>Our Services</h2>
+            <ul class="list">
+                <li>We generate strong passwords for you.</li>
+                <li> You can cipher or decipher a password </li>
+                <li>You can check if the password you created is strong or weak.</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="h2">Why Choose Us?</h2>
+            <ul id="list">
+                <li>Expertise: Our seasoned professionals are passionate about protecting you.</li>
+                <li>Cutting-Edge Solutions: We stay up-to-date with the latest technologies.</li>
+                <li>Community: Join our like-minded community.</li>
+                <li>
+                    <p style="color: white;" id="hbutton" class="word1" onclick="my1Function()">more ></p>
+        
+                    <div id="myDIV" style="display: none;">
+                        <p style="color: white;">
+                            Thank you for choosing our services! We're committed to building a safer digital world together.
+                        </p>
+        
+                    </div>
+            </ul>
+        </section>
+     
+
+    </main>
+    <script>
+
+        function my1Function() {
+            var x = document.getElementById("myDIV");
+            var b = document.getElementById("hbutton");
+        
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                b.innerHTML = "hide ∨ ";
+            } else {
+                x.style.display = "none";
+                b.innerHTML = "more > ";
+            }
+        }  
+    </script>
+</body>
+
+</html>
