@@ -21,7 +21,7 @@ nav {
     margin-bottom: 10px;
 }
 
-nav ul {
+nav ol {
     padding: 0;
     list-style-type: none;
     flex: 2;
@@ -42,7 +42,7 @@ nav a {
     color: black;
 }
 
-*{
+* {
     color: white;
 }
 
@@ -79,14 +79,14 @@ nav li {
 .nav2 {
     float: right;
     font-size: 2vw;
-    
+
 }
 
 .nav2 a {
     display: block;
     color: white;
     text-align: center;
-    padding:1vw; 
+    padding: 1vw;
     text-decoration: none;
 }
 
@@ -101,7 +101,7 @@ nav li {
     color: white;
     text-align: left;
     padding: 1vw 1.3vw;
-    font-size: 2vw; 
+    font-size: 2vw;
     padding-right: 0.7vw;
 }
 
@@ -110,16 +110,18 @@ nav li {
 .active {
     background-color: #045aaa;
 }
+
 .active:hover {
     background-color: #043176;
 }
 
- header{
+header {
     position: absolute;
     top: 0%;
     width: 90%;
     right: 5%;
 }
+
 .button1 {
     color: black;
     padding: 10px;
@@ -128,28 +130,32 @@ nav li {
 
 /* str_pass*/
 
-.safe-pass{
+.safe-pass {
     width: 75%;
     height: fit-content;
     margin: auto;
     margin-top: 60px;
     margin-bottom: 50px;
 }
-.pass-generator{
+
+.pass-generator {
     position: relative;
     width: 100%;
     float: left;
     margin-bottom: 10px;
 }
-.pass-title{
+
+.pass-title {
     margin-bottom: 15px;
 }
-.final-pass-text{
+
+.final-pass-text {
     margin: 0px;
     font-size: 20px;
     width: fit-content;
 }
-.text-holder{
+
+.text-holder {
     box-sizing: border-box;
     width: 82%;
     margin: 0px;
@@ -161,8 +167,8 @@ nav li {
     display: flex;
     align-items: center;
 }
-.stable-pass
-{
+
+.stable-pass {
     margin-left: auto;
     margin-right: 2px;
     width: fit-content;
@@ -176,7 +182,8 @@ nav li {
     /* color: rgb(238, 42, 238); */
     cursor: default;
 }
-.button-gen{
+
+.button-gen {
     box-sizing: border-box;
     float: left;
     width: 17%;
@@ -186,7 +193,8 @@ nav li {
     border: 1px solid gray;
     margin: 0px;
 }
-.copy-text-btn{
+
+.copy-text-btn {
     height: 100%;
     padding: 15px 20px;
     margin-top: 10px;
@@ -194,14 +202,18 @@ nav li {
     text-transform: uppercase;
     border: 1px solid gray;
 }
-.button-gen:hover,.copy-text-btn:hover{
+
+.button-gen:hover,
+.copy-text-btn:hover {
     background-color: rgb(135, 197, 238);
     border-color: rgb(74, 175, 243);
 }
-.pass-lenght-holder{
+
+.pass-lenght-holder {
     width: 100%;
     height: fit-content;
 }
+
 /* .slider-value{
     width: 100%;
     height: 20px;
@@ -216,24 +228,33 @@ nav li {
     border-radius: 1000px;
     margin-left: 26.666%;
 } */
-.l-word{
+.l-word {
     width: 100%;
 }
-.save-text{
+
+.save-text {
     display: none;
 }
 
-@media(max-width:992px){
-    .text-holder{
+.idea {
+    font-size: 17px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+@media(max-width:992px) {
+    .text-holder {
         box-sizing: border-box;
         float: none;
         width: 100%;
     }
-    .pass-generator{
+
+    .pass-generator {
         display: flex;
         flex-direction: column;
     }
-    .button-gen{
+
+    .button-gen {
         float: none;
         margin: auto;
         margin-top: 10px;
@@ -243,6 +264,7 @@ nav li {
         padding: 15px 10px;
     }
 }
+
 /* str_pass input*/
 .container2 {
     box-sizing: border-box;
@@ -259,34 +281,40 @@ nav li {
     right: 18%;
     left: 18%;
     top: 60%; */
-  }
+}
+
 input[type="password"] {
     width: 300px;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
     border: 0.05px solid #ccc;
-  }
+}
+
 #strength {
     color: #555;
     font-size: 0.729vw;
-  }
+}
 
-  /* chiper*/
+/* chiper*/
 
-  
-.textarea2, .but2,.p_in_chiper, .input_chiper {
+
+.textarea2,
+.but2,
+.p_in_chiper,
+.input_chiper {
     color: black;
-    background: #29b1e7;  
+    background: #29b1e7;
     padding: 1rem;
     border-radius: 1rem;
 }
 
 /* index2*/
-.main2{
+.main2 {
     margin-top: 60px;
-    font-size:2vw;
+    font-size: 2vw;
 }
+
 .container3 {
     max-width: 800px;
     max-width: 900px;
@@ -298,6 +326,7 @@ input[type="password"] {
     color: black;
     display: grid;
     gap: 0.2vw;
+
 }
 
 .p_index2 {
@@ -310,25 +339,27 @@ input[type="password"] {
 .word1 {
     font-weight: 900;
     text-decoration: underline;
-}                                                                                                                                                                             
-
-.strong1{
-
-color: rgb(255, 0, 0);
 }
-.strong2{
 
-color: rgb(0, 0, 0);
+.strong1 {
+
+    color: rgb(255, 0, 0);
+}
+
+.strong2 {
+
+    color: rgb(0, 0, 0);
 }
 
 /* safe online*/
 
-.main{
+.main {
     font-family: "Noto Sans", sans-serif;
     margin-top: 80px;
     margin-bottom: 30px;
 }
-.title{
+
+.title {
     width: fit-content;
     margin: auto;
     font-size: 56px;
@@ -336,7 +367,8 @@ color: rgb(0, 0, 0);
     margin-bottom: 60px;
     text-align: center;
 }
-.safeTips{
+
+.safeTips {
     box-sizing: border-box;
     width: 1040px;
     margin: auto;
@@ -344,54 +376,71 @@ color: rgb(0, 0, 0);
     /* border: 1px solid black; */
     padding: 0px 20px;
 }
-.listTips{
+
+.listTips {
     list-style-type: none;
     padding-left: 0px;
 }
-.listTips li{
+
+.listTips li {
     margin-bottom: 20px;
 }
-.listTips li h3{
+
+.listTips li h3 {
     font-size: 28px;
     margin-bottom: 10px;
 }
-.listTips li p{
+
+.listTips li p {
     font-size: 18px;
 }
-.strong-password-requirements,.authentMethods,.phishingAttack{
+
+.strong-password-requirements,
+.authentMethods,
+.phishingAttack {
     list-style-type: disc;
 }
-.strong-password-requirements li,.authentMethods li,.phishingAttack li{
+
+.strong-password-requirements li,
+.authentMethods li,
+.phishingAttack li {
     margin-bottom: 5px;
     font-size: 18px;
 }
-.authImg{
+
+.authImg {
     width: 60%;
     margin-top: 15px;
 }
-@media(max-width:1040px){
-    .safeTips{
+
+@media(max-width:1040px) {
+    .safeTips {
         width: 100%;
     }
 }
-@media(max-width:992px){
-    .title{
+
+@media(max-width:992px) {
+    .title {
         font-size: 48px;
     }
-    .listTips li h3{
+
+    .listTips li h3 {
         font-size: 24px;
     }
-    .listTips  li p{
+
+    .listTips li p {
         font-size: 17px;
     }
 }
-@media(max-width:768px){
-    .title{
+
+@media(max-width:768px) {
+    .title {
         font-size: 44px;
     }
 }
-@media(max-width:600px){
-    .authImg{
+
+@media(max-width:600px) {
+    .authImg {
         width: 100%;
     }
 }
