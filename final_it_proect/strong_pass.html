@@ -1,268 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href=" style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href=" style.css">
 </head>
 
 <body>
-    <header>
-        <ul class="nav1">
+  <header>
+    <ul class="nav1">
 
-            <li style="float:left"><a class="active" href="index.html">Home</a></li>
-            <li class="nav2"><a href="strong_pass.html">Strong Password</a></li>
-            <li class="nav2"><a href="chiper2.html">Chiper Text</a></li>
-            <li class="nav2"><a href="index2.html">Real Events</a></li>
-            <li class="nav2"><a href="How-they_attack_us.html">How Hackers Hack Us</a></li>
-            <li class="nav2"><a href="safe_online.html">Be Safe Online</a></li>
+      <li style="float:left"><a class="active" href="index.html">Home</a></li>
+      <li class="nav2"><a href="strong_pass.html">Strong Password</a></li>
+      <li class="nav2"><a href="chiper2.html">Chiper Text</a></li>
+      <li class="nav2"><a href="index2.html">Real Events</a></li>
+      <li class="nav2"><a href="How-they_attack_us.html">How Hackers Hack Us</a></li>
+      <li class="nav2"><a href="safe_online.html">Be Safe Online</a></li>
 
 
-        </ul>
-    </header>
-    <div class="safe-pass">
-      <h2 class="pass-title">Generate a password:</h2>
-      <div class="pass-generator">
-          <div class="text-holder" id="holder-text">
-          <p class="final-pass-text" id="final-pass"></p>
-          <p class="stable-pass" id="stable-p"></p>
-          </div>
-          <button class="button-gen" id="gen-butt">Generate</button>
+    </ul>
+  </header>
+  <div class="safe-pass">
+    <h2 class="pass-title">Generate a password:</h2>
+    <div class="pass-generator">
+      <div class="text-holder" id="holder-text">
+        <p class="final-pass-text" id="final-pass"></p>
+        <p class="stable-pass" id="stable-p"></p>
       </div>
-      <div style="clear: both;"></div>
-      <div class="pass-lenght-holder">
+      <button class="button-gen" id="gen-butt">Generate</button>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="pass-lenght-holder">
       <p class="pass-lenght-text" id="len-word">Password lenght:8</p>
       <!-- <div class="slider-value">
           <div class="thumb-value"></div>
       </div> -->
       <input type="range" min="0" max="30" value="8" class="l-word" id="lenght-word">
       <button class="copy-text-btn" onclick="copyText()">Copy</button>
-      </div>
-      </div>
-      <p id="saver" class="save-text">asdasd</p>
+    </div>
+  </div>
+  <p id="saver" class="save-text">asdasd</p>
 
-    <div class="container2">
-        <h2 style="color: black;">Password Strength Checker : Check your current password</h2>
-        <input style="color: black;" type="text" id="password" placeholder="Enter your password">
-        <div id="strength"></div>
-      </div>
+  <div class="container2">
+    <h2 style="color: black;">Password Strength Checker : Check your current password</h2>
+    <input style="color: black;" type="text" id="password" placeholder="Enter your password">
+    <div style="font-size: 1.5vw;" id="strength"></div>
+  </div>
 
 
-    <script>
-      let genButton=document.getElementById('gen-butt');
-      let wordLenght=document.getElementById('lenght-word');
-      let textLenght=document.getElementById('len-word');
-      wordLenght.oninput=function(){textLenght.innerHTML="Password lenght:"+this.value;}
-      genButton.onclick=function(){
-        let safePass="";
-        let len=parseInt(textLenght.innerHTML.substring(16,textLenght.innerHTML.length));
-        // console.log(len+" "+typeof(len));
-        for(let i=0;i<len;i++){
-        let randS=Math.floor((Math.random()*1000)+1)%93+1;
-        randS+=33;
-        while(String.fromCharCode(randS)=='<'){
-        randS=Math.floor((Math.random()*1000)+1)%93+1;
-        randS+=33;
+  <script>
+    let genButton = document.getElementById('gen-butt');
+    let wordLenght = document.getElementById('lenght-word');
+    let textLenght = document.getElementById('len-word');
+    wordLenght.oninput = function () { textLenght.innerHTML = "Password lenght:" + this.value; }
+    genButton.onclick = function () {
+      let safePass = "";
+      let len = parseInt(textLenght.innerHTML.substring(16, textLenght.innerHTML.length));
+      // console.log(len+" "+typeof(len));
+      for (let i = 0; i < len; i++) {
+        let randS = Math.floor((Math.random() * 1000) + 1) % 93 + 1;
+        randS += 33;
+        while (String.fromCharCode(randS) == '<') {
+          randS = Math.floor((Math.random() * 1000) + 1) % 93 + 1;
+          randS += 33;
         }
         console.log(String.fromCharCode(randS));
-        safePass+=String.fromCharCode(randS);
-        console.log("pass:"+safePass);
-        }
-        let genPassText=document.getElementById('final-pass');
-        genPassText.innerHTML=safePass;
-        // genPassText.style.height="50";
-        console.log("________________");
-        // console.log(safePass+" "+typeof(safePass));
-        let password=document.getElementById("final-pass").innerHTML;
+        safePass += String.fromCharCode(randS);
+        console.log("pass:" + safePass);
+      }
+      let genPassText = document.getElementById('final-pass');
+      genPassText.innerHTML = safePass;
+      // genPassText.style.height="50";
+      console.log("________________");
+      // console.log(safePass+" "+typeof(safePass));
+      let password = document.getElementById("final-pass").innerHTML;
       function checkPasswordStrength(password) {
         let strength = 0;
 
         // Minimum length
         if (password.length >= 20) {
-        strength += 1;
+          strength += 1;
         }
 
         // Contains lowercase letters
         if (/[a-z]/.test(password)) {
-        strength += 1;
+          strength += 1;
         }
 
         // Contains uppercase letters
         if (/[A-Z]/.test(password)) {
-        strength += 1;
+          strength += 1;
         }
 
         // Contains numbers
         if (/\d/.test(password)) {
-        strength += 1;
+          strength += 1;
         }
 
         // Contains special characters
         if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-        strength += 1;
+          strength += 1;
         }
 
         return strength;
-        }
-        let strengthText="";
-        const strength = checkPasswordStrength(password);
+      }
+      let strengthText = "";
+      const strength = checkPasswordStrength(password);
 
-        let strengthTextValue = '';
+      let strengthTextValue = '';
+      switch (strength) {
+        case 1:
+          strengthTextValue = 'Very Weak';
+          break;
+        case 2:
+          strengthTextValue = 'Weak';
+          break;
+        case 3:
+          strengthTextValue = 'Moderate';
+          break;
+        case 4:
+          strengthTextValue = 'Strong';
+          break;
+        case 5:
+          strengthTextValue = 'Very Strong';
+          break;
+
+      }
+      let stable = document.getElementById("stable-p");
+      stable.innerHTML = strengthTextValue;
+      console.log("Yes" + stable.innerHTML);
+      if (stable.innerHTML.length > 0) {
+        stable.style.display = "block";
         switch (strength) {
-        case 1:
-            strengthTextValue = 'Very Weak';
+          case 1:
+            stable.style.background = "orange";
+            stable.style.borderColor = "orange";
             break;
-        case 2:
-            strengthTextValue = 'Weak';
+          case 2:
+            stable.style.background = "orange";
+            stable.style.borderColor = "orange";
             break;
-        case 3:
-            strengthTextValue = 'Moderate';
+          case 3:
+            stable.style.background = " #d8d804";
+            stable.style.borderColor = " #d8d804";
             break;
-        case 4:
-            strengthTextValue = 'Strong';
+          case 4:
+            stable.style.background = "lightgreen";
+            stable.style.borderColor = "lightgreen";
             break;
-        case 5:
-            strengthTextValue = 'Very Strong';
+          case 5:
+            stable.style.background = "lightgreen";
+            stable.style.borderColor = "lightgreen";
             break;
+        }
+      } else {
+        stable.style.display = "none";
 
-        }
-        let stable=document.getElementById("stable-p");
-        stable.innerHTML=strengthTextValue;
-        console.log("Yes"+stable.innerHTML);
-        if(stable.innerHTML.length>0){
-            stable.style.display="block";
-            switch (strength) {
-        case 1:
-            stable.style.background="orange";
-            stable.style.borderColor="orange";
-            break;
-        case 2:
-            stable.style.background="orange";
-            stable.style.borderColor="orange";
-            break;
-        case 3:
-            stable.style.background=" #d8d804";
-            stable.style.borderColor=" #d8d804";
-            break;
-        case 4:
-            stable.style.background="lightgreen";
-            stable.style.borderColor="lightgreen";
-            break;
-        case 5:
-            stable.style.background="lightgreen";
-            stable.style.borderColor="lightgreen";
-            break;
-        }
-        }else{
-            stable.style.display="none";
-           
-        }
-        let letterWidth=320/30;
-          let stablePass=document.getElementById('stable-p');
-          console.log(stablePass.offsetWidth);
-          let textInStable=stablePass.innerHTML;
-          let numberSmaller=40.00;
-        let textFinal=document.getElementById("final-pass");
-        let saveText= textFinal.innerHTML;
-        let saveSafeP="";
-        while(stablePass.getBoundingClientRect().height>numberSmaller){
-            //console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
-            let safeP=textFinal.innerHTML;
-            safeP=safeP.substring(0,safeP.length-1);
-            textFinal.innerHTML=safeP;
-            console.log(safeP);
-            saveSafeP=safeP;
-        }
-        console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
-        if(saveSafeP.length<saveText.length&&saveSafeP.length>0){
-            saveSafeP=saveSafeP.substring(0,saveSafeP.length-3);
-            saveSafeP+="...";
-            textFinal.innerHTML=saveSafeP;
-        }
-        let holderGen=document.getElementById('holder-text');
-        let holderWidth=holderGen.offsetWidth-20;
-        while((holderWidth<textFinal.offsetWidth+stablePass.offsetWidth)||(holderWidth-textFinal.offsetWidth<stablePass.offsetWidth)||(textFinal.offsetHeight>23)){
-            console.log(holderWidth+" "+(textFinal.offsetWidth+stablePass.offsetWidth));
-            let safeP=textFinal.innerHTML;
-            safeP=safeP.substring(0,safeP.length-1);
-            textFinal.innerHTML=safeP;
-            console.log(safeP);
-            saveSafeP=safeP;
-        }
-        if(saveSafeP.length<saveText.length&&saveSafeP.length>0){
-            saveSafeP=saveSafeP.substring(0,saveSafeP.length-3);
-            saveSafeP+="...";
-            textFinal.innerHTML=saveSafeP;
-        }
-        let saverT=document.getElementById('saver');
-        saverT.innerHTML=saveText;
-  }
-  function copyText(){
-      let saverT=document.getElementById('saver');
+      }
+      let letterWidth = 320 / 30;
+      let stablePass = document.getElementById('stable-p');
+      console.log(stablePass.offsetWidth);
+      let textInStable = stablePass.innerHTML;
+      let numberSmaller = 40.00;
+      let textFinal = document.getElementById("final-pass");
+      let saveText = textFinal.innerHTML;
+      let saveSafeP = "";
+      while (stablePass.getBoundingClientRect().height > numberSmaller) {
+        //console.log(stablePass.getBoundingClientRect().width+" "+numberSmaller);
+        let safeP = textFinal.innerHTML;
+        safeP = safeP.substring(0, safeP.length - 1);
+        textFinal.innerHTML = safeP;
+        console.log(safeP);
+        saveSafeP = safeP;
+      }
+      console.log(stablePass.getBoundingClientRect().width + " " + numberSmaller);
+      if (saveSafeP.length < saveText.length && saveSafeP.length > 0) {
+        saveSafeP = saveSafeP.substring(0, saveSafeP.length - 3);
+        saveSafeP += "...";
+        textFinal.innerHTML = saveSafeP;
+      }
+      let holderGen = document.getElementById('holder-text');
+      let holderWidth = holderGen.offsetWidth - 20;
+      while ((holderWidth < textFinal.offsetWidth + stablePass.offsetWidth) || (holderWidth - textFinal.offsetWidth < stablePass.offsetWidth) || (textFinal.offsetHeight > 23)) {
+        console.log(holderWidth + " " + (textFinal.offsetWidth + stablePass.offsetWidth));
+        let safeP = textFinal.innerHTML;
+        safeP = safeP.substring(0, safeP.length - 1);
+        textFinal.innerHTML = safeP;
+        console.log(safeP);
+        saveSafeP = safeP;
+      }
+      if (saveSafeP.length < saveText.length && saveSafeP.length > 0) {
+        saveSafeP = saveSafeP.substring(0, saveSafeP.length - 3);
+        saveSafeP += "...";
+        textFinal.innerHTML = saveSafeP;
+      }
+      let saverT = document.getElementById('saver');
+      saverT.innerHTML = saveText;
+    }
+    function copyText() {
+      let saverT = document.getElementById('saver');
       navigator.clipboard.writeText(saverT.innerHTML);
-  }
-        //second part***************
+    }
+    //second part***************
 
-  const passwordInput = document.getElementById('password');
-  const strengthText = document.getElementById('strength');
+    const passwordInput = document.getElementById('password');
+    const strengthText = document.getElementById('strength');
 
-  function checkPasswordStrength(password) {
-    let strength = 0;
+    function checkPasswordStrength(password) {
+      let strength = 0;
 
-    // Minimum length
-    if (password.length >= 20) {
-      strength += 1;
+      // Minimum length
+      if (password.length >= 20) {
+        strength += 1;
+      }
+
+      // Contains lowercase letters
+      if (/[a-z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Contains uppercase letters
+      if (/[A-Z]/.test(password)) {
+        strength += 1;
+      }
+
+      // Contains numbers
+      if (/\d/.test(password)) {
+        strength += 1;
+      }
+
+      // Contains special characters
+      if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+        strength += 1;
+      }
+
+      return strength;
     }
 
-    // Contains lowercase letters
-    if (/[a-z]/.test(password)) {
-      strength += 1;
-    }
+    passwordInput.addEventListener('input', function () {
+      const password = passwordInput.value;
+      const strength = checkPasswordStrength(password);
 
-    // Contains uppercase letters
-    if (/[A-Z]/.test(password)) {
-      strength += 1;
-    }
+      let strengthTextValue = '';
+      switch (strength) {
+        case 1:
+          strengthTextValue = 'Very Weak';
+          break;
+        case 2:
+          strengthTextValue = 'Weak';
+          break;
+        case 3:
+          strengthTextValue = 'Moderate';
+          break;
+        case 4:
+          strengthTextValue = 'Strong';
+          break;
+        case 5:
+          strengthTextValue = 'Very Strong';
+          break;
+      }
 
-    // Contains numbers
-    if (/\d/.test(password)) {
-      strength += 1;
-    }
-
-    // Contains special characters
-    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
-      strength += 1;
-    }
-
-    return strength;
-  }
-
-  passwordInput.addEventListener('input', function() {
-    const password = passwordInput.value;
-    const strength = checkPasswordStrength(password);
-
-    let strengthTextValue = '';
-    switch (strength) {
-      case 1:
-        strengthTextValue = 'Very Weak';
-        break;
-      case 2:
-        strengthTextValue = 'Weak';
-        break;
-      case 3:
-        strengthTextValue = 'Moderate';
-        break;
-      case 4:
-        strengthTextValue = 'Strong';
-        break;
-      case 5:
-        strengthTextValue = 'Very Strong';
-        break;
-    }
-
-    strengthText.textContent = `Password Strength: ${strengthTextValue}`;
-  });
-    </script>
+      strengthText.textContent = `Password Strength: ${strengthTextValue}`;
+    });
+  </script>
 </body>
+
 </html>
