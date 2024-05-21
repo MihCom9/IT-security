@@ -14,7 +14,10 @@ body {
 }
 
 
-
+main{
+    background-color: rgb(0, 0, 0,0.3);
+    padding-top: 50px;
+}
 nav {
     height: 50px;
     background-color: lightgray;
@@ -326,10 +329,10 @@ input[type="password"] {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(0, 0, 0,0.3);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     margin-top: 7%;
-    color: black;
+    color: white;
     display: grid;
     gap: 0.2vw;
 
@@ -354,10 +357,10 @@ input[type="password"] {
     color: rgb(255, 0, 0);
 }
 
-.strong2 {
+/* .strong2 {
 
     color: rgb(0, 0, 0);
-}
+} */
 
 /* safe online*/
 
